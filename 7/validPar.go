@@ -8,14 +8,14 @@ func main() {
 }
 
 func isValid(s string) bool {
-	pairs := map[byte]byte{
+	pairs := map[rune]rune{
 		']': '[',
 		'}': '{',
 		')': '(',
 	}
 
-	stack := make([]byte, 0)
-	for _, ch := range []byte(s) {
+	stack := make([]rune, 0)
+	for _, ch := range s {
 		pair, ok := pairs[ch]
 		if !ok {
 			stack = append(stack, ch)
